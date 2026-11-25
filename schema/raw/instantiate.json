@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "InstantiateMsg",
+  "type": "object",
+  "properties": {
+    "admin": {
+      "description": "Optional admin address. Defaults to the sender. The admin may add checkpoints to any shipment (e.g. a port authority).",
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ExecuteMsg",
+  "oneOf": [
+    {
+      "description": "Register a new shipment. The shipment id must be unique.",
+      "type": "object",
+      "required": [
+        "register_shipment"
+      ],
+      "properties": {
+        "register_shipment": {
+          "type": "object",
+          "required": [
+            "description",
+            "destination",
+            "origin",
+            "shipment_id",
+            "shipper"
+          ],
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "destination": {
+              "type": "string"
+            },
+            "origin": {
+              "type": "string"
+            },
+            "shipment_id": {
+              "type": "string"
+            },
+            "shipper": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "description": "Record a checkpoint for an existing shipment. Only the shipment's registrant or the contract admin may call this.",
+      "type": "object",
+      "required": [
+        "add_checkpoint"
+      ],
+      "properties": {
+        "add_checkpoint": {
+          "type": "object",
+          "required": [
+            "location",
+            "note",
+            "shipment_id",
+            "status"
+          ],
+          "properties": {
+            "location": {
+              "type": "string"
+            },
+            "note": {
+              "type": "string"
+            },
+            "shipment_id": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  ]
+}

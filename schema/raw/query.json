@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "QueryMsg",
+  "oneOf": [
+    {
+      "description": "Full details of one shipment.",
+      "type": "object",
+      "required": [
+        "get_shipment"
+      ],
+      "properties": {
+        "get_shipment": {
+          "type": "object",
+          "required": [
+            "shipment_id"
+          ],
+          "properties": {
+            "shipment_id": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "description": "Every checkpoint recorded for a shipment, in the order recorded.",
+      "type": "object",
+      "required": [
+        "get_checkpoints"
+      ],
+      "properties": {
+        "get_checkpoints": {
+          "type": "object",
+          "required": [
+            "shipment_id"
+          ],
+          "properties": {
+            "shipment_id": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "description": "Is this shipment's trail verifiable? A shipment is verified when it has at least 2 checkpoints (origin + at least one more hop).",
+      "type": "object",
+      "required": [
+        "verify_shipment"
+      ],
+      "properties": {
+        "verify_shipment": {
+          "type": "object",
+          "required": [
+            "shipment_id"
+          ],
+          "properties": {
+            "shipment_id": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "description": "All registered shipment ids, in registration order.",
+      "type": "object",
+      "required": [
+        "list_shipments"
+      ],
+      "properties": {
+        "list_shipments": {
+          "type": "object",
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  ]
+}
