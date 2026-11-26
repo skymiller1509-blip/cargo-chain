@@ -2,8 +2,9 @@
 
 A cocoa shipment from Lagos to Rotterdam, with every handoff recorded on-chain — and anyone can check the trail.
 
-**Demo video:** TODO — film from `VIDEO-SCRIPT.md` (3–5 min, SIMULATION version until the contract is deployed).
-**Repo:** TODO — `skymiller1509-blip/cargo-chain` (not created yet, Eddie's step).
+**Demo video:** TODO — film from `VIDEO-SCRIPT.md` (3–5 min).
+**Repo:** https://github.com/skymiller1509-blip/cargo-chain
+**Contract (ME testnet):** `me1r50m5lafnmctat4xpvwdpzqndynlxt2skhr4fhzh76u0qar2y9hqg2s9ql` — shipment `CC-2026-001` live with 3 checkpoints, verified on-chain 2026-11-24.
 **Event:** MetaEarth Hackathon 2026 (HARBOR), Track 1: On-chain finance and trading. Team **Butterfly**. Submit by 21 Dec 2026 15:59 UTC.
 
 Team **Butterfly** — MetaEarth Hackathon 2026 (HARBOR), Track 1: On-chain finance and trading.
