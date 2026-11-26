@@ -5,14 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CargoChain Provenance Ledger — MetaEarth HARBOR</title>
 <style>
-  body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; color: #1a1a1a; }
-  h1 { font-size: 1.5rem; } h2 { font-size: 1.15rem; margin-top: 2rem; }
-  code, pre { background: #f2f2f2; border-radius: 4px; }
-  code { padding: 0.1rem 0.3rem; } pre { padding: 1rem; overflow-x: auto; }
-  .tag { display: inline-block; background: #fff3cd; border: 1px solid #e6c200; border-radius: 4px; padding: 0.2rem 0.6rem; font-size: 0.85rem; }
-  .live { display: inline-block; background: #d9f2d9; border: 1px solid #0a7a0a; border-radius: 4px; padding: 0.2rem 0.6rem; font-size: 0.85rem; }
-  table { border-collapse: collapse; width: 100%; } td, th { border: 1px solid #ccc; padding: 0.4rem 0.6rem; text-align: left; }
-  .ok { color: #0a7a0a; font-weight: bold; } .no { color: #a00; font-weight: bold; }
+  body { font-family: system-ui, sans-serif; max-width: 760px; margin: 0 auto; padding: 2rem 1rem 3rem; line-height: 1.6; color: #fff; background: linear-gradient(160deg, #2b1055 0%, #7597de 55%, #ff6ec7 100%); background-attachment: fixed; }
+  h1 { font-size: 2rem; line-height: 1.2; color: #ffe45e; text-shadow: 0 2px 12px rgba(0,0,0,.35); }
+  h2 { font-size: 1.25rem; margin-top: 2.2rem; color: #7df9ff; border-bottom: 3px solid #ff6ec7; padding-bottom: 0.3rem; }
+  a { color: #ffe45e; }
+  code, pre { background: #241040; color: #7df9ff; border-radius: 8px; }
+  code { padding: 0.15rem 0.4rem; } pre { padding: 1rem; overflow-x: auto; border: 2px solid #ff6ec7; }
+  .tag { display: inline-block; background: #fff3cd; border: 1px solid #e6c200; border-radius: 20px; padding: 0.25rem 0.7rem; font-size: 0.85rem; color: #5a4300; }
+  .live { display: inline-block; background: #00e676; color: #003d1e; border: 2px solid #fff; border-radius: 20px; padding: 0.3rem 0.8rem; font-size: 0.9rem; font-weight: bold; box-shadow: 0 0 16px rgba(0,230,118,.8); }
+  table { border-collapse: collapse; width: 100%; background: rgba(255,255,255,.96); color: #241040; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,.3); }
+  td, th { border: 1px solid #e0b3ff; padding: 0.5rem 0.7rem; text-align: left; }
+  th { background: linear-gradient(90deg, #ff6ec7, #7597de); color: #fff; }
+  tr:nth-child(even) td { background: #f3e8ff; }
+  .ok { color: #00a651; font-weight: bold; } .no { color: #d6336c; font-weight: bold; }
 </style>
 </head>
 <body>
