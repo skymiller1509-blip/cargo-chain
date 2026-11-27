@@ -21,11 +21,14 @@ Team **Butterfly**. Hackathon page: https://www.mec.me/en-US/hackathon/harbor
 
 - [x] Contract built: CosmWasm (Rust), 10/10 tests pass, WASM built
       (sha256 4ab53ee792eeb36d84b252e7e2f734ef8dae8b5992db2c9df924e76c55b26732)
-- [x] Simulation demo works (`./demo.sh`, `demo/index.html`, labelled SIMULATION)
-- [x] Video script written (`VIDEO-SCRIPT.md`) — simulation version, re-record after deploy
-- [ ] **Repo not created yet** — **Eddie's step: create `cargo-chain` on GitHub**
-- [ ] **Not deployed on-chain yet** — waits on the faucet + `med` CLI (below)
-- [ ] Demo video filmed — after the simulation is confirmed working
+- [x] **Deployed live on ME testnet 24 Nov 2026** — code ID 38, contract
+      `me1r50m5lafnmctat4xpvwdpzqndynlxt2skhr4fhzh76u0qar2y9hqg2s9ql`,
+      shipment `CC-2026-001` with 3 checkpoints, `verify_shipment` true.
+      Full record in `DEPLOYMENT.md`.
+- [x] Repo created and published: https://github.com/skymiller1509-blip/cargo-chain (25 Nov 2026, 28 files)
+- [x] Demo page live with the on-chain trail (`demo/index.html`, Earth theme + cute fonts, 26 Nov 2026); local `./demo.sh` simulation kept as the offline fallback, labelled SIMULATION
+- [x] Video script written (`VIDEO-SCRIPT.md`)
+- [ ] Demo video filmed — raw footage received 26 Nov 2026, final video build pending
 - [ ] Submit by 21 Dec 2026 15:59 UTC
 
 ## Deploy — Eddie's steps, in order
