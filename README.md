@@ -2,6 +2,8 @@
 
 A cocoa shipment from Lagos to Rotterdam, with every handoff recorded on-chain — and anyone can check the trail.
 
+**Shipment CC-2026-001 live: 3 checkpoints, verified on-chain 24 Nov 2026.**
+
 **Demo video:** TODO — film from `VIDEO-SCRIPT.md` (3–5 min).
 **Repo:** https://github.com/skymiller1509-blip/cargo-chain
 **Contract (ME testnet):** `me1r50m5lafnmctat4xpvwdpzqndynlxt2skhr4fhzh76u0qar2y9hqg2s9ql` — shipment `CC-2026-001` live with 3 checkpoints, verified on-chain 2026-11-24.
@@ -15,6 +17,26 @@ has at least **2 checkpoints** (origin + at least one more hop).
 
 Demo shipment: `CC-2026-001`, 1000 bags of cocoa beans,
 Lagos, Nigeria → Rotterdam, Netherlands.
+
+## Hackathon Requirements Met
+
+MetaEarth Hackathon 2026 (HARBOR), Track 1: On-chain finance and trading. Team **Butterfly**. Submit by 21 Dec 2026 15:59 UTC. Each requirement, with proof:
+
+- [x] Project description — this README.
+- [x] Code repo — https://github.com/skymiller1509-blip/cargo-chain (public, published 25 Nov 2026, 28 files).
+- [x] Run records — contract `me1r50m5lafnmctat4xpvwdpzqndynlxt2skhr4fhzh76u0qar2y9hqg2s9ql`, code ID 38, shipment `CC-2026-001` live with 3 checkpoints, `verify_shipment` true (24 Nov 2026). Full record in `DEPLOYMENT.md`.
+- [x] Experience entry / local run instructions — Build, test, demo section below (`cargo test`, `./demo.sh`).
+- [ ] Demo video, 3–5 min — script in `VIDEO-SCRIPT.md`; raw footage received 26 Nov 2026, final video build pending.
+- [ ] Submit by 21 Dec 2026 15:59 UTC.
+
+Demo failure-proofing: the demo page shows the live on-chain trail — no faucet, no wallet and no network call the judge has to make. The video is filmed from the live page. The local `./demo.sh` still runs the in-memory simulation for judges without testnet access, labelled SIMULATION.
+
+## Judging Highlights
+
+- **Innovation:** a provenance ledger where anyone can check the trail — a swapped bag, caught by the trail. The shipment is verified when its trail has at least 2 checkpoints.
+- **Technical execution:** CosmWasm contract deployed live on ME testnet (code ID 38); 10/10 tests pass (8 unit + 2 end-to-end); WASM build sha256 published in this README.
+- **Impact:** 1000 bags of cocoa, Lagos to Rotterdam — every handoff recorded on-chain, and `verifyShipment()` proves the trail, not just claims it.
+- **Completeness:** contract + live demo page + docs, all live; the video is the one piece still to come; honest limits stated below.
 
 ## Tech stack
 
@@ -56,21 +78,18 @@ RUSTFLAGS='-C link-arg=-s' cargo build --release --lib --target=wasm32-unknown-u
 
 `cargo run --bin schema` generates the JSON schemas in `schema/`.
 
-## Deploy (testnet)
+## Deploy (testnet) — DONE 24 Nov 2026
 
-See `deploy-testnet.sh`. Exact `med` commands: store → instantiate →
-register → 3 checkpoints → verify, against the beta testnet
-(chain-id `mechain_400-1`).
+Deployed 24 Nov 2026 ~15:22 WAT. Code ID 38. Contract:
+`me1r50m5lafnmctat4xpvwdpzqndynlxt2skhr4fhzh76u0qar2y9hqg2s9ql`.
+Shipment `CC-2026-001` live with 3 checkpoints; `verify_shipment`
+returns true. See `deploy-testnet.sh` for the exact `med` commands
+(store → instantiate → register → 3 checkpoints → verify) and
+`DEPLOYMENT.md` for the full record.
 
-Still needed before deploy (Eddie's steps):
-1. A funded testnet key — test MEC from the faucet at
-   https://www.mec.me/en-US/faucet (needs an ME ID sign-in on the web page).
-   Deployer address (fresh testnet-only key, generated 2026-11-24):
-   `me1x9tzpcpt662m2sakahxufelflftl80xrwdvn5t` — paste this address into
-   the faucet (2 MEC per claim, 1 claim per address per day). The
-   mnemonic stays in its mode-600 file and is never shared.
-2. The `med` CLI — build from https://github.com/openmetaearth/me-hub, or
-   the Linux amd64 binary attached to the v2.0.18 release there.
+The deployer address (fresh testnet-only key, generated 2026-11-24):
+`me1x9tzpcpt662m2sakahxufelflftl80xrwdvn5t`. The mnemonic stays in its
+mode-600 file and is never shared.
 
 No real funds involved: the beta testnet uses test MEC with no real value.
 Never deploy this to mainnet without a separate review.
@@ -112,18 +131,18 @@ Never deploy this to mainnet without a separate review.
 
 ## Honest limits
 
-- The contract is built, tested and compiled to WASM, but **not yet
-  deployed on-chain**: deploy waits on a funded testnet key (faucet,
-  Eddie's step) and the `med` binary.
-- The demo (`./demo.sh`, `demo/index.html`) runs the real contract code
-  on an in-memory test chain, not on ME Network. It is labelled
-  SIMULATION wherever shown.
+- The contract is **deployed live on ME testnet** (code ID 38, 24 Nov
+  2026): shipment `CC-2026-001`, 3 checkpoints, `verify_shipment` true.
+  The demo page shows that live trail.
+- The local demo (`./demo.sh`) runs the real contract code on an
+  in-memory test chain, not on ME Network. It is labelled SIMULATION
+  wherever shown — it is the offline fallback, not the live trail.
 - `verifyShipment()` proves the on-chain trail has >= 2 checkpoints. It
   does not prove the physical cargo moved — no oracle or IoT feed is
   wired in. Anyone can see the trail; only the registrant/admin can add
   to it.
-- The demo page lists the repo as `skymiller1509-blip/cargo-chain`;
-  the repo has not been created yet (Eddie's step).
+- The repo is public: https://github.com/skymiller1509-blip/cargo-chain
+  (published 25 Nov 2026, 28 files).
 
 ## License
 
